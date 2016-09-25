@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="todo.css">
   </head>
   <body>
-    <h2>Todo</h2>
-    <div ng-controller="TodoListController as todoList">
-      <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+    <!-- <h2>Todo</h2> -->
+    <div class="main" ng-controller="TodoListController as todoList">
+      <!-- <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
       [ <a href="" ng-click="todoList.archive()">archive</a> ]
       <ul class="unstyled">
         <li ng-repeat="todo in todoList.todos">
@@ -18,11 +18,27 @@
           </label>
         </li>
       </ul>
-      <form ng-submit="todoList.addTodo()">
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
+      <div class="searchbox">
+        <form ng-submit="todoList.addTodo()">
+          <input type="text" class="search" ng-model="todoList.todoText"  size="30"
+                 placeholder="Tell us about you dream">
+          <input class="btn-primary" type="submit" value="Submit">
+        </form>
+      </div> -->
+      <div class="bar">
+        <div class="form">
+          <form ng-submit="todoList.addTodo()">
+            <input type="text" id="search" ng-model="todoList.todoText"  size="30"
+                   placeholder="Tell us about you dream"/>
+              <!-- <button class="close-icon" type="reset"></button> -->
+
+            <!-- <input class="btn" type="submit" value="Submit"> -->
+            <input class="btn" ng-class="{pink: hover}" name="focus" type="submit" value="Submit" ng-mouseenter="hover = true" ng-mouseleave="hover = false"/>
+          </form>
+          <!-- <br> -->
+          <p>this is for test</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
