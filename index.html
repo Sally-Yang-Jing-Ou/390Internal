@@ -28,10 +28,14 @@
       <div class="bar">
         <div class="form">
           <form ng-submit="todoList.addTodo()">
-            <input type="text" id="search" ng-model="todoList.todoText"  size="30"
-                   placeholder="Tell us about you dream"/>
+            <label id="searchLabel">
+              <input type="text" required id="search" ng-model="dream"  size="30"
+                     placeholder="Tell us about you dream"/>
+            </label>
               <!-- <button class="close-icon" type="reset"></button> -->
-
+             <!--  <a class="clear" ng-click="searchAll = null">
+                  <span class="glyphicon glyphicon-remove">X</span>
+              </a> -->
             <!-- <input class="btn" type="submit" value="Submit"> -->
             <input class="btn" ng-class="{pink: hover}" name="focus" type="submit" value="Submit" ng-mouseenter="hover = true" ng-mouseleave="hover = false"/>
           </form>

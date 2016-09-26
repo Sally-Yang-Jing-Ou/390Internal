@@ -21,7 +21,7 @@ html, body {
 .bar {
   display: table-cell;
   vertical-align: middle;
-  /*text-align: center;*/
+  text-align: center;
   border: 2px solid yellow;
 }
 
@@ -31,12 +31,12 @@ html, body {
 } 
 
 .form {
-	/*display: block;*/
+	display: inline-block;
 	margin: auto;
-	background-color: pink;
-	width: 1000px;
+	/*background-color: pink;*/
+	width: 75%;
 	border: none;
-	text-align: center;
+	/*text-align: center;*/
 }
 
 #search {
@@ -44,11 +44,12 @@ html, body {
 	border-radius: 15px;
 	height: 70px;
 	width: 90%;
-	/*margin: auto;*/
+	padding-left: 20px;
+	margin: auto;
 	border: 1px solid #ccc;
 	/*margin-bottom: 20px;*/
-	text-align: center;
-	font-size: 1.25em;
+	/*text-align: center;*/
+	font-size: 1.20em;
 	outline: 0;
 	/*text-decoration: none;*/
 	/*float: left;*/
@@ -69,23 +70,24 @@ html, body {
 }
 
 .close-icon {
-	border:1px solid transparent;
+	border:1px solid purple;
 	background-color: transparent;
 	display: inline-block;
 	vertical-align: middle;
 	outline: 0;
+	right: 50px;
 	cursor: pointer;
 }
 
 .close-icon:after {
+	border: 2px solid red;
 	content: "X";
-	/*display: block;
-	width: 15px;
-	height: 15px;
+	display: block;
 	position: absolute;
 	background-color: #FA9595;
 	z-index:1;
-	right: 35px;
+	width: 15px;
+	height: 15px;
 	top: 0;
 	bottom: 0;
 	margin: auto;
@@ -96,7 +98,7 @@ html, body {
 	font-weight: normal;
 	font-size: 12px;
 	box-shadow: 0 0 2px #E50F0F;
-	cursor: pointer;*/
+	cursor: pointer;
 }
 
 #search:not(:valid) ~ .close-icon {
@@ -110,10 +112,11 @@ html, body {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	padding: 2;
+	padding: 2px;
 	right: 50px;
 	margin: auto;
 	font-size: 15px;
+	outline: 0;
 	/*border: none;*/
 	/*background: white; */
 }
@@ -124,6 +127,9 @@ html, body {
 
 p{
 	float: left;
+	position: relative;
+	left: 40px;
+	
 }
 
 /*#content {

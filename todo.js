@@ -1,5 +1,9 @@
 angular.module('todoApp', [])
   .controller('TodoListController', function($scope) {
+
+    $scope.clearSearch = function() {
+      $scope.dream = '';
+    };
     // var todoList = this;
     // todoList.todos = [
     //   {text:'learn angular', done:true},
