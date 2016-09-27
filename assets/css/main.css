@@ -1,0 +1,267 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
+
+	html, body {
+		overflow-x: hidden;
+		width: 100%;
+		min-height: 100%;
+		height: auto;
+		min-width: 320px;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #000;
+		padding: 6em 3.5em 3.5em 3.5em;
+	}
+
+		body > * {
+			position: relative;
+			z-index: 2;
+		}
+
+	#bg {
+		transition: opacity 2s ease-in-out;
+		height: 100%;
+		left: 0;
+		opacity: 0.45;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+		#bg div {
+			transition: opacity 3s ease, visibility 3s;
+			background-size: cover;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			visibility: hidden;
+			width: 150%;
+		}
+
+			#bg div.visible {
+				-webkit-animation: bg 45s linear infinite;
+				animation: bg 45s linear infinite;
+				opacity: 1;
+				visibility: visible;
+				z-index: 1;
+			}
+
+				#bg div.visible.top {
+					z-index: 2;
+				}
+
+				@media screen and (max-width: 1280px) {
+					#bg div.visible {
+						animation: bg 29.25s linear infinite;
+					}
+				}
+
+				@media screen and (max-width: 736px) {
+					#bg div.visible {
+						animation: bg 18s linear infinite;
+					}
+
+				}
+
+			#bg div:only-child {
+				-webkit-animation-direction: alternate !important;
+				animation-direction: alternate !important;
+			}
+
+		body.is-loading #bg {
+			opacity: 0;
+		}
+
+	@-webkit-keyframes bg {
+		0% {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+		}
+
+		100% {
+			-moz-transform: translateX(-25%);
+			-webkit-transform: translateX(-25%);
+			-ms-transform: translateX(-25%);
+			transform: translateX(-25%);
+		}
+	}
+
+	@keyframes bg {
+		0% {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+		}
+
+		100% {
+			-moz-transform: translateX(-25%);
+			-webkit-transform: translateX(-25%);
+			-ms-transform: translateX(-25%);
+			transform: translateX(-25%);
+		}
+	}
+
+	body, input, textarea {
+		color: rgba(255, 255, 255, 0.75);
+		font-family: "Roboto", sans-serif;
+		font-size: 16pt;
+		font-weight: 400;
+		letter-spacing: -0.01em;
+		line-height: 1.65em;
+	}
+
+		@media screen and (max-width: 1280px) {
+
+			body, input, select, textarea {
+				font-size: 11pt;
+			}
+		}
+
+	p {
+		margin: 0 0 2em 0;
+	}
+
+	h1 {
+		color: #fff;
+		font-weight: 700;
+		line-height: 1em;
+		margin: 0 0 1em 0;
+		font-size: 2.5em;
+		line-height: 1.25em;
+	}
+
+	input[type="text"],
+	select,
+	textarea {
+		-webkit-appearance: none;
+		transform: scale(1);
+		transition: border-color 0.2s ease, background-color 0.2s ease;
+		background-color: transparent;
+		border-radius: 6px;
+		border: solid 2px rgba(255, 255, 255, 0.35);
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none;
+		width: 100%;
+	}
+
+		input[type="text"]:focus,
+		select:focus,
+		textarea:focus {
+			-moz-animation: focus 0.1s;
+			-webkit-animation: focus 0.1s;
+			-ms-animation: focus 0.1s;
+			animation: focus 0.1s;
+			background-color: rgba(255, 255, 255, 0.125);
+			border-color: #1cb495;
+		}
+
+	textarea {
+		padding: 0.75em 1em;
+	}
+
+	::-webkit-input-placeholder {
+		color: rgba(255, 255, 255, 0.5);
+		opacity: 1.0;
+	}
+
+	.formerize-placeholder {
+		color: rgba(255, 255, 255, 0.5);
+		opacity: 1.0;
+	}
+
+	input[type="submit"],
+	.button {
+		-webkit-appearance: none;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+		background-color: #1cb495;
+		border-radius: 6px;
+		border: 0;
+		color: #ffffff;
+		display: inline-block;
+		font-weight: 700;
+		line-height: 2.75em;
+		padding: 0 1.125em;
+		text-align: center;
+	}
+
+		input[type="submit"]:hover,
+		button:hover,
+		.button:hover {
+			background-color: #1fcaa7;
+		}
+
+	#header h1 {
+		font-size: 3.25em;
+		margin: 0 0 0.55em 0;
+	}
+
+	#header p {
+		font-size: 1.35em;
+		line-height: 1.65em;
+	}
+
+	@media screen and (max-width: 736px) {
+		#header h1 {
+			font-size: 2em;
+		}
+		#header p {
+			font-size: 1em;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		#header {
+			margin: 0 0 1em 0;
+		}
+	}
+
+	#search {
+		display: -webkit-flex;
+		display: flex;
+		position: relative;
+	}
+
+		#search input[type="text"]{
+			width: 30em;
+			height: 3em;
+		}
+
+		#search > * {
+			margin: 0 0 0 1em;
+		}
+
+		#search > :first-child {
+			margin: 0 0 0 0;
+		}
+
+		@media screen and (max-width: 480px) {
+				#search input[type="text"] {
+					width: 100%;
+				}
+
+				#search > * {
+					margin: 1.25em 0 0 0;
+				}
+
+				#search .message {
+					bottom: -1.5em;
+					font-size: 0.9em;
+					height: 1em;
+					left: 0;
+					line-height: inherit;
+					margin-top: 0;
+					position: absolute;
+				}
+		}

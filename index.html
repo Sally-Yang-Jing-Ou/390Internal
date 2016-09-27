@@ -1,51 +1,23 @@
-<!doctype html>
-<html ng-app="todoApp">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="todo.js"></script>
-    <link rel="stylesheet" href="todo.css">
-  </head>
-  <body>
-    <!-- <h2>Todo</h2> -->
-    <div class="main" ng-controller="TodoListController as todoList">
-      <!-- <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-      [ <a href="" ng-click="todoList.archive()">archive</a> ]
-      <ul class="unstyled">
-        <li ng-repeat="todo in todoList.todos">
-          <label class="checkbox">
-            <input type="checkbox" ng-model="todo.done">
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </label>
-        </li>
-      </ul>
-      <div class="searchbox">
-        <form ng-submit="todoList.addTodo()">
-          <input type="text" class="search" ng-model="todoList.todoText"  size="30"
-                 placeholder="Tell us about you dream">
-          <input class="btn-primary" type="submit" value="Submit">
-        </form>
-      </div> -->
-      <div class="bar">
-        <div class="form">
-          <form ng-submit="todoList.addTodo()">
-            <label id="searchLabel">
-              <input type="text" required id="search" ng-model="dream"  size="30"
-                     placeholder="Tell us about you dream"/>
-            </label>
-            <input class="btn" ng-class="{pink: hover}" name="focus" type="submit" value="Submit" ng-mouseenter="hover = true" ng-mouseleave="hover = false"/>
-          </form>
-          <div class="tag">
-            <ul>
-              <li><p>test</p></li>
-              <li><p>test</p></li>
-              <li><p>test</p></li>
-              <li><p>test</p></li>
-              <li><p>test</p></li>
-              <li><p>test</p></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Dreams Interpreter</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body>
+
+			<header id="header">
+				<h1>Dreams Interpreter</h1>
+				<p>Welcome. We Will Tell You How Probable Your Dream Is<br /></p>
+			</header>
+
+			<form id="search" method="post" action="#">
+				<input type="text" name="dream" id="email" placeholder="Tell us about your dream" />
+				<input type="submit" value="Submit" />
+			</form>
+
+			<script src="assets/js/main.js"></script>
+	</body>
 </html>
