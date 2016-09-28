@@ -49,3 +49,34 @@
 		})();
 		// Need a function to process the input and submit to our database, http call?
 })();
+
+function processText() {
+
+	let dream = document.getElementById("email").value;
+	var input = dream.split(" ");
+
+	//var lex = nlp_compromise.lexicon();
+
+	//var analysis = nlp_compromise.text(dream).tags();
+	var findTags = ["Infinitive", "Noun", "Adverb", "Organization", "Country", "City", "Comparative", "Superlative", "Adjective", "PresentTense", "PastTense", "FutureTense", "Abbreviation", "Plural"];
+	var tags = [];
+	var tagCounter = 0;
+
+	for (var i = 0; i < input.length; i++) {
+		var test = nlp_compromise.text(input[i]).tags();
+		if (findTags.indexOf(test[0][0]) > -1) {
+			tags[tagCounter] = input[i];
+			tagCounter++;
+		}
+	}
+
+/*	for (var i = 0; i < analysis[0].length; i++) {
+		if (findTags.indexOf(analysis[0][i]) > -1) {
+			tags[tagCounter] = input[i];
+			tagCounter++;
+		}
+	}*/
+
+	alert(tags);
+
+}
