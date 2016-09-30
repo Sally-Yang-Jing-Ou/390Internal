@@ -4,10 +4,13 @@
 		<title>Dreams Interpreter</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/ng-tags-input.min.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 		<script src="https://unpkg.com/nlp_compromise@latest/builds/nlp_compromise.min.js"></script>
+   		<script src="assets/js/ng-tags-input.min.js"></script>
+		<script src="assets/js/tags.js"></script>
 	</head>
-	<body>
+	<body ng-app="myApp" ng-controller="MyCtrl">
 
 			<header id="header">
 				<h1>Dreams Interpreter</h1>
@@ -18,7 +21,12 @@
 				<input type="text" name="dream" id="email" placeholder="Tell us about your dream" />
 				<input type="submit" value="Submit" onclick="processText();" />
 			</form>
-
+			<section id="tagsbg">
+				<tags-input ng-model="tags" id="tags">
+       				 <!-- <auto-complete source="loadTags($query)"></auto-complete> --> 
+   				</tags-input>
+			</section>
 			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
