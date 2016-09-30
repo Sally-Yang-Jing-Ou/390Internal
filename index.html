@@ -22,7 +22,10 @@
 				<input type="submit" value="Submit" onclick="processText();" />
 			</form>
 			<section id="tagsbg">
-				<tags-input ng-model="tags" id="tags">
+				<tags-input class="bootstrap"
+                ng-model="tags"
+                placeholder="Add a Tag"
+                replace-spaces-with-dashes="false">
        				 <!-- <auto-complete source="loadTags($query)"></auto-complete> --> 
    				</tags-input>
 			</section>
