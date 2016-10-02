@@ -12,7 +12,7 @@
 }
 
 .bootstrap .tags .tag-item {
-  background: #428bca;
+  background: #999999;
   border: 1px solid #357ebd;
   border-radius: 4px;
   color: #fff;
@@ -27,7 +27,7 @@
 
 .bootstrap .tags .tag-item button {
   background: transparent;
-  color: #000;
+  color: #111;
   opacity: .4;
 }
 

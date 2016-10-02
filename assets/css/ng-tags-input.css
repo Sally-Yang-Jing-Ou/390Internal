@@ -2,11 +2,13 @@ tags-input {
   display: block;
 }
 tags-input *, tags-input *:before, tags-input *:after {
+
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 tags-input .host {
+
   position: relative;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -64,7 +66,7 @@ tags-input .tags .tag-item .remove-button {
   cursor: pointer;
   vertical-align: middle;
   font: bold 16px Arial, sans-serif;
-  color: #585858;
+  color: #888888;
 }
 tags-input .tags .tag-item .remove-button:active {
   color: #ff0000;
