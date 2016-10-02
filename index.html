@@ -4,10 +4,10 @@
 		<title>Dreams Interpreter</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/ng-tags-input.min.css" />
+		<link rel="stylesheet" href="assets/css/ng-tags-input.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 		<script src="https://unpkg.com/nlp_compromise@latest/builds/nlp_compromise.min.js"></script>
-   		<script src="assets/js/ng-tags-input.min.js"></script>
+   		<script src="assets/js/ng-tags-input.js"></script>
 		<script src="assets/js/tags.js"></script>
 	</head>
 	<body ng-app="myApp" ng-controller="MyCtrl">
@@ -17,7 +17,7 @@
 				<p>Welcome. We Will Tell You How Probable Your Dream Is<br /></p>
 			</header>
 
-			<form id="search" method="post" action="#">
+			<form id="search" method="post" action="./result.html">
 				<input type="text" name="dream" id="email" placeholder="Tell us about your dream" />
 				<input type="submit" value="Submit" onclick="processText();" />
 			</form>
