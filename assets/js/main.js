@@ -96,55 +96,37 @@ function processText() {
     ];
 
     todoList.processText = function(event){
-    	if(event.keyCode == 32){
+    	// if(event.keyCode == 32){
     	// alert("this");
-    	console.log(todoList.dreamtext - input);
+    		console.log(todoList.dreamtext - input);
     	// todoList.tags.push({ text: todoList.dreamtext });
 		// let dream = document.getElementById("email").value;
 			var dream = todoList.dreamtext;
-			// alert(dream);
-			// var input = [];
-			// if(dream.endsWith(' ')){
-			// var input;
-			// if(dream.includes(" ")){
 			var	input = dream.split(" ");
-				// alert(input);
-			// }
-				// alert(input);
-			// }else{
-				// input = [];
-			// }
-
-			//var lex = nlp_compromise.lexicon();
-
-			//var analysis = nlp_compromise.text(dream).tags();
-			var findTags = ["Infinitive", "Noun", "Adverb", "Organization", "Country", "City", "Comparative", "Superlative", "Adjective", "PresentTense", "PastTense", "FutureTense", "Abbreviation", "Plural"];
+			var findTags = ["Infinitive", "Noun", "Adverb", 
+							"Organization", "Country", "City", 
+							"Comparative", "Superlative", "Adjective", 
+							"PresentTense", "PastTense", "FutureTense", 
+							"Abbreviation", "Plural"];
 			var tags = [];
 			var tagCounter = 0;
+			todoList.tags = [];
 
 			for (var i = 0; i < input.length; i++) {
 				var test = nlp_compromise.text(input[i]).tags();
-				console.log("at index: " + i + test + " " + " " + findTags.indexOf(test[0][0])+ findTags.indexOf(test[0][0])>-1);
+				console.log("at index: " + i + test + "00i" + findTags.indexOf(test[0][0]));
+				console.log( findTags.indexOf(test[0][0])>-1);
 				if (findTags.indexOf(test[0][0]) > -1) {
+					console.log(test[0][0] + " hi ");
 					tags[tagCounter] = input[i];
-					// tags[tagCounter ]= {'text' : input[i]}
 					tagCounter++;
-					// if(todoList.dreamtext.includes(input[i])){
-					todoList.tags.push({text: input[i]})
+					todoList.tags.push({text: input[i]});
+					console.log(todoList.tags);
 					// }
 				}
 			}
 
-		/*	for (var i = 0; i < analysis[0].length; i++) {
-				if (findTags.indexOf(analysis[0][i]) > -1) {
-					tags[tagCounter] = input[i];
-					tagCounter++;
-				}
-			}*/
-
-			// alert(tags);
-			// $scope.tags = [{ text: $scope.dreamtext }];
-	}
+		// }
 
 	};
 
