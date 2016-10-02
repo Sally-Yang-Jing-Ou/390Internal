@@ -17,7 +17,7 @@
 				<p>Welcome. We Will Tell You How Probable Your Dream Is<br /></p>
 			</header>
 
-			<form id="search" method="post" ng-submit="todoList.alert()">
+			<form id="search" method="post" ng-submit="todoList.alert()" action="./result.html">
 				<input type="text" id="email" ng-model="todoList.dreamtext" placeholder="Tell us about your dream" ng-change="todoList.processText()"/>
 				<input type="submit" value="submit" />
 			</form>
