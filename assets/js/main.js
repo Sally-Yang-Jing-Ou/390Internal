@@ -50,9 +50,52 @@
 		// Need a function to process the input and submit to our database, http call?
 })();
 
+function getProbability(tags) {
+	// check the input array of tages
+	if(tags === undefined)
+	{
+		return undefined;
+	}
+	
+	// construct http calling
+	// var frm = document.getElementById("search");
+	// frm.action = "";
+	// frm. = tages[0];
+	// frm.submit();
+	
+	// ajax
+	var xmlHttp = new XMLHttpRequest();
+	//xmlHttp.setRequestHeader("Content-type","text/plain");
+	
+	// prepare data
+	var name = "key_list=";
+	var data = name;
+	data = data + tags[0];
+	for(var i = 1; i < tags.length; i++)
+	{
+		data = data + "&";
+		data = data + name;
+		data = data + tags[i];
+	}
+	
+	// set asy. function
+	// xmlHttp.onreadystatechange = function()
+	  // {
+	    // if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+	    // {
+		  // alert(xmlHttp.responseText);
+		// }
+	  // };
+	xmlHttp.open("POST", "http://ec2-54-159-120-252.compute-1.amazonaws.com:443/cgi-bin/dreamer.py", false);
+	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.send(data);
+	alert(xmlHttp.responseText);
+}
+
+
 function processText() {
 
-	let dream = document.getElementById("email").value;
+	var dream = document.getElementById("email").value;
 	var input = dream.split(" ");
 
 	//var lex = nlp_compromise.lexicon();
@@ -77,6 +120,6 @@ function processText() {
 		}
 	}*/
 
-	alert(tags);
-
+	//alert(tags);
+	getProbability(tags);
 }
