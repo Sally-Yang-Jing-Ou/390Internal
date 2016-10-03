@@ -70,12 +70,12 @@ function getProbability(tags) {
 	// prepare data
 	var name = "key_list=";
 	var data = name;
-	data = data + tags[0];
+	data = data + tags[0].text;
 	for(var i = 1; i < tags.length; i++)
 	{
 		data = data + "&";
 		data = data + name;
-		data = data + tags[i];
+		data = data + tags[i].text;
 	}
 	
 	// set asy. function
@@ -93,29 +93,29 @@ function getProbability(tags) {
 }
 
 
-function processText() {
+// function processText() {
 
-	var dream = document.getElementById("email").value;
-	var input = dream.split(" ");
+// 	var dream = document.getElementById("email").value;
+// 	var input = dream.split(" ");
 
-	//var lex = nlp_compromise.lexicon();
+// 	//var lex = nlp_compromise.lexicon();
 
-	//var analysis = nlp_compromise.text(dream).tags();
-	var findTags = ["Infinitive", "Noun", "Adverb", "Organization", "Country", "City", "Comparative", "Superlative", "Adjective", "PresentTense", "PastTense", "FutureTense", "Abbreviation", "Plural"];
-	var tags = [];
-	var tagCounter = 0;
+// 	//var analysis = nlp_compromise.text(dream).tags();
+// 	var findTags = ["Infinitive", "Noun", "Adverb", "Organization", "Country", "City", "Comparative", "Superlative", "Adjective", "PresentTense", "PastTense", "FutureTense", "Abbreviation", "Plural"];
+// 	var tags = [];
+// 	var tagCounter = 0;
 
-	for (var i = 0; i < input.length; i++) {
-		var test = nlp_compromise.text(input[i]).tags();
-		if (findTags.indexOf(test[0][0]) > -1) {
-			tags[tagCounter] = input[i];
-			tags[tagCounter ]= {'text' : input[i]}
-			tagCounter++;
-		}
-	}
+// 	for (var i = 0; i < input.length; i++) {
+// 		var test = nlp_compromise.text(input[i]).tags();
+// 		if (findTags.indexOf(test[0][0]) > -1) {
+// 			tags[tagCounter] = input[i];
+// 			tags[tagCounter ]= {'text' : input[i]}
+// 			tagCounter++;
+// 		}
+// 	}
 
-	getProbability(tags);
-}
+// 	getProbability(tags);
+// }
 
 
 
@@ -157,11 +157,12 @@ function processText() {
 					tagCounter++;
 					todoList.tags.push({text: input[i]});
 					console.log(todoList.tags);
-					// }
 				}
 			}
 
-		// }
-
 	};
+
+	todoList.getProb = function() {
+		window.getProbability(todoList.tags);
+	}
 });
