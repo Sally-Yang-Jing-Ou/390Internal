@@ -114,14 +114,6 @@ function processText() {
 		}
 	}
 
-/*	for (var i = 0; i < analysis[0].length; i++) {
-		if (findTags.indexOf(analysis[0][i]) > -1) {
-			tags[tagCounter] = input[i];
-			tagCounter++;
-		}
-	}*/
-
-	//alert(tags);
 	getProbability(tags);
 }
 
@@ -172,12 +164,4 @@ function processText() {
 		// }
 
 	};
-
-	todoList.alert = function() {
-		alert(todoList.tags);
-	}
-
-    // $scope.loadTags = function(query) {
-    //     return $http.get('/tags?query=' + query);
-    // };
 });
