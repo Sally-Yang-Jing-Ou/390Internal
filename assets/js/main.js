@@ -52,6 +52,7 @@
 
 function getProbability(tags) {
 	// check the input array of tages
+	 //window.location.href = "./result.html";
 	if(tags === undefined)
 	{
 		return undefined;
@@ -89,7 +90,32 @@ function getProbability(tags) {
 	xmlHttp.open("POST", "http://ec2-54-159-120-252.compute-1.amazonaws.com:443/cgi-bin/dreamer.py", false);
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.send(data);
-	alert(xmlHttp.responseText);
+	var ret = xmlHttp.responseText;
+	// calculate percentage
+	var val_ret = new Number(ret);
+	val_ret = val_ret * 100.0;
+	// set the lower bound
+	if(val_ret < 0.00000001)
+	{
+		val_ret = 0.00000001;
+	}
+	// to percentage string
+	ret = val_ret.toString();
+	var ret_length = ret.length;
+	if(ret_length > 10)
+	{
+		ret = ret.substr(0, 10);
+	}
+	ret = ret + "%";
+	
+	sessionStorage.setItem('probability', ret);
+	if(sessionStorage.getItem('probability')){
+		console.log('store success');
+	}else{
+		console.log('store fail');
+	}
+	//alert(xmlHttp.responseText);
+	//document.getElementById("prob").innerText = 2; //xmlHttp.responseText;
 }
 
 
@@ -120,7 +146,7 @@ function getProbability(tags) {
 
 
  angular.module('myApp', ['ngTagsInput'])
-    .controller('MyCtrl', function() {
+    .controller('MyCtrl', function($http, $window) {
     var todoList = this;
     var index = 0;
     todoList.tags = [
@@ -163,6 +189,8 @@ function getProbability(tags) {
 	};
 
 	todoList.getProb = function() {
+		//$window.location.href = "./result.html";
 		window.getProbability(todoList.tags);
+	
 	}
 });
